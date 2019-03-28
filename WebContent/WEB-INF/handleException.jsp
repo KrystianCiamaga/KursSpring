@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Wystapil blad
+Wystapil blad ${error}
 </body>
 </html>

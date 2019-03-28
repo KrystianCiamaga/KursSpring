@@ -1,5 +1,6 @@
 package pl.javasolutions.controllers;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -7,8 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ExceptionController {
 	
 	@ExceptionHandler(Exception.class)
-	public String handleException(Exception e) {
+	public String handleException(Exception e, Model model) {
 		
+		model.addAttribute("error", e.getStackTrace());
 		return "handleException";
 	}
 }
