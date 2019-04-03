@@ -10,7 +10,7 @@ public class ExceptionController {
 	@ExceptionHandler(Exception.class)
 	public String handleException(Exception e, Model model) {
 		
-		model.addAttribute("error", e.getStackTrace());
+		model.addAttribute("error", e);
 		return "handleException";
 	}
 }
